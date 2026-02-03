@@ -19,6 +19,7 @@ import Product from './pages/product';
 import OnlineStore from './pages/onlineStore';
 import ProductGrid from './components/ProductCart/productGrid';
 import ProductDetails from './components/ProductCart/productDetails';
+import Orders from './pages/orders';
 function App() {
   return (
     <Router>
@@ -35,6 +36,7 @@ function App() {
           <Route path="customers" element={<Customer />} />
           <Route path="catlog" element={<Catlog />} />
           <Route path="catlog/:id" element={<CatlogDetails />} />
+          <Route path="order" element={<Orders />} />
         </Route>
         {/* customer layout wrapper */}
         <Route path="/onlinestore" element={<OnlineStore />} >

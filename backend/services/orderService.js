@@ -27,3 +27,9 @@ export const createOrderData = async (payload) => {
     throw new Error(error.message);
   }
 };
+// services/orderService.js
+
+
+export const getAllOrdersService = async (filters = {}) => {
+  return await Order.find(filters).sort({ createdAt: -1 });
+};

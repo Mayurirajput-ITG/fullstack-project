@@ -1,0 +1,116 @@
+.orders-container {
+  padding: 24px;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+/* Header */
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.orders-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Filters */
+.filters {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filters input,
+.filters select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d0d5dd;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Download Button */
+.download-btn {
+  background: #12b76a;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Table */
+.table-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 14px;
+}
+
+.orders-table th {
+  background: #f9fafb;
+  color: #475467;
+  font-weight: 600;
+}
+
+.amount {
+  font-weight: 600;
+}
+
+/* Status Pills */
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.status.placed {
+  background: #667085;
+}
+
+.status.processing {
+  background: #f79009;
+}
+
+.status.delivered {
+  background: #12b76a;
+}
+
+/* Status Dropdown */
+.status-select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d0d5dd;
+  font-size: 13px;
+}
+
+/* Empty State */
+.empty {
+  text-align: center;
+  padding: 24px;
+  color: #98a2b3;
+}
