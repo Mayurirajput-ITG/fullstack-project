@@ -140,21 +140,21 @@ export default function Catlog() {
             />
           </div>
 
-          <select className="select" value={category} onChange={(e) => setCategory(e.target.value)}>
+          {/* <select className="select" value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value="">Category</option>
             <option value="Men">Men</option>
             <option value="Skin Care">Skin Care</option>
             <option value="Fresh Vegetable">Fresh Vegetable</option>
-          </select>
+          </select> */}
 
-          <select className="select" value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)}>
+          {/* <select className="select" value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)}>
             <option value="">Price</option>
             <option value="low-high">Low → High</option>
             <option value="high-low">High → Low</option>
-          </select>
+          </select> */}
 
-          <button className="filter-btn">Filter</button>
-          <button className="reset-btn">Reset</button>
+          {/* <button className="filter-btn">Filter</button>
+          <button className="reset-btn">Reset</button> */}
         </div>
         <table className="product-table">
           <thead>

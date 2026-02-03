@@ -3,6 +3,13 @@
   background: #f9fafb;
   min-height: 100vh;
 }
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
 
 /* Header */
 .orders-header {

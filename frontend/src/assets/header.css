@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
 .header_body {
   width: 100%;
   background-color: rgb(196, 192, 192);

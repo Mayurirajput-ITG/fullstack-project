@@ -6,6 +6,14 @@
   background-color: #f5f5f5;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
 
 .navbar-container {
   width: 250px;
@@ -319,6 +327,21 @@
   cursor: pointer;
   margin-top: 0.8rem;
 }
+.footer-navbar{
+  padding: 20px;
+}
+.logout-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: #12b886;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.8rem;
+}
 
 /* Links */
 .link {
@@ -331,4 +354,146 @@
 .link a {
   color: #12b886;
   text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .navbar-container {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .main-content {
+    margin-left: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navbar-container.show {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header_main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header_right {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 1200px) {
+  .grid-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .middle-grid-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .middle-grid-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-area {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .login-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+  }
+
+  .login-left {
+    width: 100%;
+    height: 200px;
+  }
+
+  .login-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-right {
+    padding: 1.2rem;
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+  }
+
+  .login-btn {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    height: auto;
+    overflow: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navbar-container.show {
+    left: 0;
+  }
+
+  .menu-icon {
+    cursor: pointer;
+  }
 }

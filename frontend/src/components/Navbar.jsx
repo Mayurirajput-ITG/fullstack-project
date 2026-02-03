@@ -1,10 +1,24 @@
 import React from "react";
 import "../assets/main.css"
 import Logo from "../assets/images/logo.svg"
+import { useNavigate } from "react-router-dom";
+export default function Navbar({ role, isOpen }) {
 
-export default function Navbar({ role }) {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    // 1. Remove user-related data
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    // OR if you want to clear everything
+    // localStorage.clear();
+
+    // 2. Redirect to login
+    navigate("/login");
+  };
+
   return (
-    <div className="navbar-container">
+    <div className={`navbar-container ${isOpen ? "show" : ""}`}>
       <div className="navbar-container-logo">
 
         <img src={Logo}></img>
@@ -36,6 +50,10 @@ export default function Navbar({ role }) {
             <li><a href="/onlinestore" target="_blank"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>Online store</a></li>
           </ul>
         }
+        <div className="footer-navbar" onClick={handleLogout}>
+          <button className="logout-btn">Logout</button>
+        </div>
+
       </div>
     </div>
   );

@@ -45,6 +45,13 @@ select {
   display: flex;
   gap: 16px;
 }
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
 
 .col {
   flex: 1;

@@ -39,7 +39,6 @@ export const loginUser = async (data) => {
   }
 
   const isMatch = await bcrypt.compare(password, user.password);
-
   if (!isMatch) {
     throw new Error("Invalid password");
   }

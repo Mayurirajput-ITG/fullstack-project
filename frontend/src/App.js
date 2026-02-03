@@ -20,32 +20,45 @@ import OnlineStore from './pages/onlineStore';
 import ProductGrid from './components/ProductCart/productGrid';
 import ProductDetails from './components/ProductCart/productDetails';
 import Orders from './pages/orders';
+
+import ProtectedRoute from './routes/ProtectedRoutes';
+import AuthRoute from './routes/AuthRoutes';
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Redirect to login */}
+        {/* Default redirect */}
         <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        {/* Dashboard layout wrapper */}
-        <Route path="/dashboard" element={<Dashboard role="admin" />}>
-          {/* Default Dashboard content */}
-          <Route index element={<MainGrid />} />
-          {/* Customer Page */}
-          <Route path="customers" element={<Customer />} />
-          <Route path="catlog" element={<Catlog />} />
-          <Route path="catlog/:id" element={<CatlogDetails />} />
-          <Route path="order" element={<Orders />} />
+
+        {/* Auth routes (no access after login) */}
+        <Route element={<AuthRoute />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Route>
-        {/* customer layout wrapper */}
-        <Route path="/onlinestore" element={<OnlineStore />} >
-          <Route index element={<ProductGrid />} />
-          <Route path="product/:id" element={<ProductDetails />} />
-        </Route>
-        <Route path="/customer" element={<Dashboard role="customer" />}>
-          <Route index element={<MainGrid />} />
-          {/* <Route path="product" element={<Product />} /> */}
+
+        {/* Protected routes (login required) */}
+        <Route element={<ProtectedRoute />}>
+
+          {/* Admin Dashboard */}
+          <Route path="/dashboard" element={<Dashboard role="admin" />}>
+            <Route index element={<MainGrid />} />
+            <Route path="customers" element={<Customer />} />
+            <Route path="catlog" element={<Catlog />} />
+            <Route path="catlog/:id" element={<CatlogDetails />} />
+            <Route path="order" element={<Orders />} />
+          </Route>
+
+          {/* Online Store */}
+          <Route path="/onlinestore" element={<OnlineStore />}>
+            <Route index element={<ProductGrid />} />
+            <Route path="product/:id" element={<ProductDetails />} />
+          </Route>
+
+          {/* Customer Dashboard */}
+          <Route path="/customer" element={<Dashboard role="customer" />}>
+            <Route index element={<MainGrid />} />
+          </Route>
+
         </Route>
       </Routes>
     </Router>

@@ -1,4 +1,4 @@
-import { createOrderData,getAllOrdersService } from "../services/orderService.js";
+import { createOrderData,getAllOrdersService ,calculateDashboardStats} from "../services/orderService.js";
 
 export const createOrder = async (req, res) => {
   try {
@@ -34,5 +34,13 @@ export const getAllOrders = async (req, res) => {
       success: false,
       message: error.message,
     });
+  }
+};
+export const getDashboardStats = async (req, res) => {
+  try {
+    const stats = await calculateDashboardStats();
+    res.status(200).json({ success: true, data: stats });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
   }
 };

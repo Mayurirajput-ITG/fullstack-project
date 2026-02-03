@@ -35,6 +35,8 @@ export default function Login() {
       const data = await response.json();
       if (data.status) {
         localStorage.setItem("user", JSON.stringify(data?.user));
+        localStorage.setItem("token", data.token);
+
         if (data.user.role === 1) {
           navigate("/dashboard");
         } else {
