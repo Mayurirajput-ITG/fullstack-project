@@ -30,13 +30,71 @@ export default function OnlineStore() {
   const handleClose = () => {
     setIsModelOPen(false);
   }
-  const handleDeleteCartItem=()=>{
-   try{
-    
-   }catch(error){
+  const handleDeleteCartItem = async (productId) => {
+    try {
+      const response = await fetch(
+        `http://localhost:7000/api/cart/${user?.id}/${productId}`,
+        { method: "DELETE" }
+      );
 
-   }
-  }
+      const data = await response.json();
+
+      if (data.success) {
+        setProducts(data.data.items);
+      } else {
+        alert("Failed to remove item");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handlePlaceOrder = async () => {
+    try {
+      if (!product.length) {
+        alert("Cart is empty");
+        return;
+      }
+
+      const orderPayload = {
+        customer_id: user?.id,
+        customer_name: user?.name,
+        items: product.map((item) => ({
+          product_id: item.product_id,
+          product_name: item.product_name,
+          quantity: item.quantity,
+          price: item.price,
+          total_price: item.price * item.quantity,
+        })),
+        amount: product.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0
+        ),
+        payment_method: "Online",
+      };
+
+      const response = await fetch("http://localhost:7000/api/order/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderPayload),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Order placed successfully ");
+        setIsModelOPen(false);
+      } else {
+        alert("Failed to place order ");
+      }
+    } catch (error) {
+      console.error(error);
+
+    }
+  };
+
   return (
     <div class="onlinestore-main-container">
       <div className="navbar">
@@ -78,7 +136,7 @@ export default function OnlineStore() {
                       <p>{item?.price}</p>
                     </div>
                     <div className="cart-product-price">
-                      <FiTrash2 className="icon" onClick={() => { handleDeleteCartItem() }} />
+                      <FiTrash2 className="icon" onClick={() => handleDeleteCartItem(item.product_id)} />
                     </div>
                   </div>
 
@@ -87,7 +145,9 @@ export default function OnlineStore() {
 
             </div>
             <div className="cart-footer">
-              <button className="place_order_btn">Place The Order</button>
+              <button className="place_order_btn" onClick={handlePlaceOrder}>
+                Place The Order
+              </button>
               <button className="close_btn" onClick={() => { setIsModelOPen(false) }}>close</button>
             </div>
           </div>

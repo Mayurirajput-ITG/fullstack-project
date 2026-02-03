@@ -1,6 +1,6 @@
 // import addedToCart
 
-import { addedToCart, cartDataById ,deleteCartData} from "../services/cartService.js"
+import { addedToCart, cartDataById, deleteCartData } from "../services/cartService.js"
 
 
 export const addToCart = async (req, res) => {
@@ -44,21 +44,25 @@ export const getCartItemById = async (req, res) => {
     });
   }
 }
-export const deleteCartItems=async(req,res)=>{
-  try{
-    const{id}=req.params;
-    const cartData=await deleteCartData(id);
+
+
+export const deleteCartItems = async (req, res) => {
+  try {
+    const { customerId, productId } = req.params;
+
+    const cartData = await deleteCartData(customerId, productId);
+
     res.status(200).json({
-      status:true,
-      data:cartData,
-      message:"Delete Cart Item successfully"
-    })
-  }
-  catch (error) {
-    console.error("Product Add Error:", error);
+      success: true,
+      data: cartData,
+      message: "Cart item deleted successfully",
+    });
+  } catch (error) {
+    console.error("Delete Cart Item Error:", error);
+
     res.status(500).json({
-      status: false,
-      message: error.message
+      success: false,
+      message: error.message,
     });
   }
-}
+};

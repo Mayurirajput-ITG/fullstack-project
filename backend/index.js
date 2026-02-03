@@ -5,6 +5,7 @@ import dbConnection from './utills/db.js';
 import router from './routes/authRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import cartRouter from './routes/cartRoutes.js';
+import orderRouter from './routes/orderRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api',router);
 app.use('/api/products',productRouter);
 app.use('/api/cart',cartRouter);
+app.use('/api/order',orderRouter)
 const PORT = process.env.PORT || 7000;
 dbConnection();
 

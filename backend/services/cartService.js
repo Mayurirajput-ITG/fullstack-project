@@ -49,7 +49,20 @@ return await Cart.find({ customer_id });
 
 };
 
-export const deleteCartData=async(customer_id)=>{
-  const cartData=await Cart.find({customer_id});
-  
-}
+
+
+export const deleteCartData = async (customerId, productId) => {
+  const cart = await Cart.findOne({ customer_id: customerId });
+
+  if (!cart) {
+    throw new Error("Cart not found");
+  }
+
+  cart.items = cart.items.filter(
+    (item) => item.product_id !== productId
+  );
+
+  await cart.save();
+
+  return cart;
+};
