@@ -7,6 +7,8 @@ import { FiTrash2 } from "react-icons/fi";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { BsCart4 } from "react-icons/bs";
 import { Outlet } from "react-router-dom";
+import SlideImg1 from '../assets/images/slider-1.webp'
+import cardItems from '../assets/images/ins1.webp';
 export default function OnlineStore() {
   const user = JSON.parse(localStorage.getItem("user"));
   const [isModelOPen, setIsModelOPen] = useState(false);
@@ -94,6 +96,26 @@ export default function OnlineStore() {
 
     }
   };
+  const offers = [
+    {
+      id: 1,
+      image: cardItems,
+      discount: "50% off",
+      title: "August Gift Voucher",
+      time: "30:2:23",
+      coupon: "AUGUST24",
+      condition: "This coupon applies when shopping more than $2000"
+    },
+    {
+      id: 2,
+      image: cardItems,
+      discount: "30% off",
+      title: "Festival Special",
+      time: "15:10:05",
+      coupon: "FEST30",
+      condition: "Valid on orders above $1000"
+    }
+  ];
 
   return (
     <div class="onlinestore-main-container">
@@ -116,6 +138,57 @@ export default function OnlineStore() {
           </div>
         </div>
       </div>
+      <div className="main-navabar-2">
+        <div className="left-nav">
+          <ul>
+            <li><a href="#home">Category</a></li>
+            <li><a href="#news">About Us</a></li>
+            <li><a href="#contact">Contact us</a></li>
+            <li><a href="#about">Pages</a></li>
+          </ul>
+        </div>
+        <div className="right-nav">
+          <ul>
+            <li><a href="#home">English</a></li>
+            <li><a href="#news">Privacy Policy</a></li>
+            <li><a href="#contact">Terms&Conditions</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <div className="main-container-offer">
+        <div className="main-container-left">
+          <div className="sliders">
+            <img src={SlideImg1} alt="grocery" />
+            <div className="slider-content">
+              <h2>Best Different Type of Grocery Store</h2>
+              <p>Quickly aggregate empowered networks...</p>
+              <button>Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div className="main-container-right">
+          <div className="right-heading">
+            <h3>Latest Super Discount Active Coupon Code</h3>
+          </div>
+          <div className="right-content">
+            {offers.map((item, index) => {
+              return (
+                <div className="offer-card" key={item?.id}>
+                  <div className="offer-card1"><img src={item.image}></img></div>
+                  <div className="offer-card2"><p>{item?.discount}</p><p>{item?.title}</p><div><p>{item?.time}</p></div></div>
+                  <div className="offer-card3">
+
+                    <button>{item?.coupon}</button>      <div>{item?.condition}</div >
+                  </div>
+                </div>
+              )
+            })}
+            {/* */}
+          </div>
+        </div>
+      </div>
+
       {isModelOPen &&
         <div className={`ap-overlay ${isModelOPen ? "show" : ""}`}>
           <div className={`ap-modal ${isModelOPen ? "slide-in" : ""}`}>

@@ -355,7 +355,10 @@ img {
   color: #12b886;
   text-decoration: none;
 }
-
+.errors{
+  color:red;
+  font-size: 12px;
+}
 @media (max-width: 1024px) {
   .navbar-container {
     width: 220px;

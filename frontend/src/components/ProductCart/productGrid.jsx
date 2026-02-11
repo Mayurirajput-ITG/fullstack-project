@@ -22,11 +22,10 @@ export default function ProductGrid() {
   }, []);
   const handleProductClick = (item) => {
     console.log("item................", item);
-    navigate(`/onlinestore/product/${item._id}`)
+    navigate(`/onlinestore/product/${item._id}`);
   }
   return (
     <div >
-
       <div className="product-grid">
         {products?.map((item) => (
           <div className="product-card" key={item._id} onClick={() => { handleProductClick(item) }}>
