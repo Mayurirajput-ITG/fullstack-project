@@ -39,6 +39,7 @@ import Picture1 from '../assets/images/picture1.webp'
 import Picture2 from '../assets/images/picture2.webp'
 import Logos from '../assets/images/logos.svg';
 import Payment from '../assets/images/payment.webp';
+import Logo from '../assets/images/logo-light.svg';
 export default function OnlineStore() {
   const user = JSON.parse(localStorage.getItem("user"));
   const [isModelOPen, setIsModelOPen] = useState(false);
@@ -342,18 +343,33 @@ export default function OnlineStore() {
 
   return (
     <div class="onlinestore-main-container">
+      <div className="main-header">
+      <div className="upper-navbar">
+        <div className="upper-navbar-left">
+          <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+          <span>We are available 24/7, Need help??
+            +099949343</span>
+        </div>
+        <div className="upper-navbar-right">
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <div className="vertical-line"></div>
+            <li><a href="#contact">Contact us</a></li>
+               <div className="vertical-line"></div>
+            <li><a href="#news">My Account</a></li>
+               <div className="vertical-line"></div>
+            <li><a href="#about"><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
+          </ul>
+        </div>
+      </div>
       <div className="navbar">
         <div className="left">
-          <div className="logo">BIG BAZAR</div>
+          <div className="logo"><img src={Logo}></img></div>
+        </div>
+        <div className="middle">
           <input className="search" placeholder="Search for products..." />
         </div>
-
         <div className="right">
-          <span className="menu">Categories</span>
-          <span className="menu">About Us</span>
-          <span className="menu">Contact Us</span>
-          <span className="menu red">Offers</span>
-
           <div className="icons">
             <span className="icon"><BsCart4 onClick={() => { handleCartModel() }}></BsCart4></span>
             <span className="icon"><IoIosNotificationsOutline></IoIosNotificationsOutline></span>
@@ -375,10 +391,11 @@ export default function OnlineStore() {
             <li><a href="#home">English</a></li>
             <li><a href="#news">Privacy Policy</a></li>
             <li><a href="#contact">Terms&Conditions</a></li>
-
           </ul>
         </div>
+      </div >
       </div>
+      <div className="middle-content">
       <div className="main-container-offer">
         <div className="main-container-left">
           <div className="sliders">
@@ -546,7 +563,7 @@ export default function OnlineStore() {
           </div>
         </div>
       </div>
-      <hr className="hr-line"></hr>   
+      <hr className="hr-line"></hr>
       <div className="section7">
         <div className="section7-main">
 
@@ -630,7 +647,7 @@ export default function OnlineStore() {
           </div>
         </div>
       </div>
-
+</div>
       {isModelOPen &&
         <div className={`ap-overlay ${isModelOPen ? "show" : ""}`}>
           <div className={`ap-modal ${isModelOPen ? "slide-in" : ""}`}>

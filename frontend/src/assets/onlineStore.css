@@ -13,6 +13,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
 }
 
 .left-nav {}
@@ -33,14 +34,14 @@ img {
   display: block;
   color: rgb(18, 17, 17);
   text-align: center;
-  font-size: 15px;
+  font-size: 0.75rem;
   font-weight: 500;
-  padding: 14px 14px;
+  padding: 10px 14px;
   text-decoration: none;
 }
 
 .left-nav ul li a:hover {
-  /* background-color: #111111; */
+  /* background-color: lab(66.9756% -58.27 19.5419); */
 }
 
 .right-nav ul {
@@ -62,12 +63,12 @@ img {
   text-align: center;
   padding: 14px 14px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
 .right-nav ul li a:hover {
-  /* background-color: #111111; */
+  /* background-color: lab(66.9756% -58.27 19.5419); */
 }
 
 .right-nav {}
@@ -97,7 +98,7 @@ img {
 }
 
 .slider-content button {
-  background: #1abc9c;
+  background: lab(66.9756% -58.27 19.5419);
   border: none;
   padding: 10px 20px;
   color: white;
@@ -163,7 +164,7 @@ img {
 }
 
 .offer-card3 button {
-  color: #06b66a;
+  color: lab(66.9756% -58.27 19.5419);
   padding: 10px 20px;
   border: 1px dashed;
   border-radius: 7px;
@@ -191,7 +192,7 @@ img {
 .section2-left div {
   font-size: 20px;
   font-weight: 700;
-  color: #07bc7a;
+  color: lab(66.9756% -58.27 19.5419);
 }
 
 .section2-left p {
@@ -204,7 +205,7 @@ img {
 
 .section2-right button {
   color: white;
-  background-color: #00a86b;
+  background-color: lab(66.9756% -58.27 19.5419);
   font-size: 15px;
   cursor: pointer;
   font-weight: 600;
@@ -322,7 +323,7 @@ img {
 }
 
 .section4-grid:hover {
-  border: 1px solid green;
+  border: 1px solid lab(66.9756% -58.27 19.5419);
   background-color: #f9fafb;
   transform: translateY(-3px);
 }
@@ -351,7 +352,7 @@ img {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: #00a86b;
+  background: lab(66.9756% -58.27 19.5419);
   color: white;
   border: none;
   padding: 12px 14px;
@@ -386,7 +387,7 @@ img {
 }
 
 .section4-grid-title a:hover {
-  color: rgb(14, 176, 14);
+  color: lab(66.9756% -58.27 19.5419);
 }
 
 .section4-grid-review {}
@@ -539,7 +540,6 @@ img {
 .section6-upper-div {
   margin: 0;
   display: grid;
-  /* padding: 20px; */
   grid-template-columns: repeat(7, 1fr);
   align-items: center;
 }
@@ -691,36 +691,79 @@ li.section7-list a:hover {
 .footer {
   padding: 4px;
   text-align: center;
-  font-size:  .875rem;
+  font-size: .875rem;
   color: lab(47.7841% -.393182 -10.0268);
 }
 
-.navbar {
-  /* width: 100%; */
+.main-header {
+  top: 0;
+  z-index: 10;
+  position: sticky;
+  /* position: absolute; */
+  /* position: relative; */
+}
 
-  height: 70px;
-  background: #06b66a;
-  padding: 10px 30px;
+
+.upper-navbar {
+  padding: 10px 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  background-color: lab(96.1596% -.0823438 -1.13575);
+  margin: 0;
+}
+
+.upper-navbar-left span {
+  font-size: .75rem;
+  font-weight: 500;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.upper-navbar-right ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 400;
+}
+
+.upper-navbar-right a {
+  text-decoration: none;
+  color: lab(27.1134% -.956401 -12.3224);
+  font-size: .75rem;
+  font-weight: 500;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.upper-navbar-right a:hover {
+  color: #06b66a;
+}
+
+.navbar {
+  height: 70px;
+  background: lab(66.9756% -58.27 19.5419);
+  padding: 10px 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
   color: white;
-  /* overflow-x: hidden; */
+}
+
+.middle {
+  width: 100%;
 }
 
 .left {
   display: flex;
   align-items: center;
-  gap: 20px;
-}
-
-.logo {
-  font-weight: 900;
-  font-size: 20px;
 }
 
 .search {
-  width: 450px;
+  width: 100%;
   padding: 10px;
   border-radius: 8px;
   border: none;
@@ -732,6 +775,15 @@ li.section7-list a:hover {
   gap: 20px;
 }
 
+.logo {
+  padding: 10px;
+}
+
+.logo img {
+
+  width: 140px;
+}
+
 .menu {
   cursor: pointer;
 }
@@ -741,6 +793,7 @@ li.section7-list a:hover {
 }
 
 .icons {
+  /* color: white; */
   display: flex;
   align-items: center;
   gap: 15px;
@@ -789,7 +842,7 @@ li.section7-list a:hover {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: #00a86b;
+  background: lab(66.9756% -58.27 19.5419);
   color: white;
   border: none;
   padding: 12px 14px;
@@ -819,7 +872,7 @@ li.section7-list a:hover {
   position: fixed;
   top: 200px;
   right: 20px;
-  background: #0ca56b;
+  background: lab(66.9756% -58.27 19.5419);
   width: 130px;
   padding: 15px;
   border-radius: 12px;
@@ -835,7 +888,7 @@ li.section7-list a:hover {
 
 .cart-widget .amount {
   background: white;
-  color: #0ca56b;
+  color: lab(66.9756% -58.27 19.5419);
   padding: 10px;
   border-radius: 8px;
   font-size: 18px;
@@ -949,7 +1002,7 @@ li.section7-list a:hover {
   font-weight: 400;
   border: none;
   border-radius: 8px;
-  background-color: #06b66a;
+  background-color: lab(66.9756% -58.27 19.5419);
 }
 
 .close_btn {
