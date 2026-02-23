@@ -889,3 +889,6 @@ Error Handling & Validation: Ensures data integrity and improves user experience
 
 
 This project serves as a strong foundation for understanding real-world E-Commerce systems and full-stack web development concepts. It also provides opportunities for further enhancements and professional-level features.
+
+https://photos.google.com/share/AF1QipM9t2rAJ7p7Y6YbG0mmaAHYXiyGHnxzkhNbPso6AX2PA6Ual_K4kIxvxwm8gELoTQ?key=c29QN1M3SGIybmlOckJXV3QzNlR5RHdWUjhxSkVB
+https://drive.google.com/drive/folders/1kdN0V8t5s9hcRapnvk874oPDTquJOVbM
